@@ -131,6 +131,9 @@ table {
   color: #c78f78;
   text-decoration: none;
 }
+.card__link::before, .card__link::after {
+  content: '"';
+}
 .card__image {
   width: clamp(60px, 15vw, 235px);
   height: clamp(60px, 15vw, 235px);

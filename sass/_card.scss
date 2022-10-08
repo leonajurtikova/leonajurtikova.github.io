@@ -74,6 +74,10 @@
     &__link {
         color: $string;
         text-decoration: none;
+        &::before,
+        &::after {
+            content: '"';
+        }
     }
     &__image {
         width: clamp(60px, 15vw, 235px);;
