@@ -1,0 +1,178 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url("../font/CONSOLA.TTF") format("truetype");
+}
+.card {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__content {
+  width: calc(100% - 40px);
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  aspect-ratio: 9/5;
+  background: #252526;
+  position: relative;
+  z-index: 0;
+}
+.card__content::before, .card__content::after {
+  content: "";
+  width: 100%;
+  height: 2%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #f3ca38, #ffad4a, #ff9268, #ff7e8a, #ff75aa, #f07fc8, #d98ce2, #ba9af4, #9fb0ff, #8ac3ff, #84d3ff, #8ee0ff);
+}
+.card__content::after {
+  top: auto;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.card__text {
+  font-family: "Consolas";
+  font-size: clamp(8px, 3vw, 35px);
+  font-weight: 400;
+  line-height: 1.17;
+  margin-left: 1ch;
+}
+.card__line {
+  color: #FFFFFF;
+}
+.card__line--first-tab {
+  margin-left: 4ch;
+}
+.card__line--second-tab {
+  margin-left: 8ch;
+}
+.card__curly-bracket-main {
+  color: #F3CA38;
+}
+.card__key {
+  color: #8EE0FF;
+}
+.card__key::before, .card__key::after {
+  content: '"';
+}
+.card__string {
+  color: #c78f78;
+}
+.card__string::before, .card__string::after {
+  content: '"';
+}
+.card__curly-bracket-second {
+  color: #DB79D0;
+}
+.card__number {
+  color: #A7CEB9;
+  text-decoration: none;
+}
+.card__link {
+  color: #c78f78;
+  text-decoration: none;
+}
+.card__image {
+  width: clamp(60px, 15vw, 235px);
+  height: clamp(60px, 15vw, 235px);
+  position: relative;
+  border-radius: 8px;
+  background-image: url("../img/fotka.webp");
+  margin: auto;
+  background-size: cover;
+}
+.card__image::before, .card__image::after {
+  display: block;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border: 8px solid #c78f78;
+  z-index: -1;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 10px #c78f78, inset 0 0 20px #c78f78;
+  border-radius: 8px;
+}
+@media (max-width: 620px) {
+  .card__image::before, .card__image::after {
+    border: 4px solid #c78f78;
+  }
+}
+@media (max-width: 380px) {
+  .card__image::before, .card__image::after {
+    content: none;
+  }
+}
+.card__image::after {
+  z-index: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  box-shadow: none;
+}
+@media (max-width: 620px) {
+  .card__image::after {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+}
